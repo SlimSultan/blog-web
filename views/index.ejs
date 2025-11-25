@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Home - My Blog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <%- include("partials/header") %>
+    <main class="container">
+      <% if (typeof search !== "undefined") { %>
+      <h2>Search results for "<%= search %>"</h2>
+      <% } else { %>
+      <h2>Recent Posts</h2>
+      <% } %>
+      <div class="posts">
+        <% if (posts.length === 0) { %>
+        <p>No Posts yet.</p>
+        <% } %> <% posts.forEach(function(post) { %>
+        <article class="post-card">
+          <h3><a href="/posts/<%= post.id %>"><%= post.title %></a></h3>
+          <div class="meta">
+            <span class="cat"
+              ><a href="/category/<%= post.category %>"
+                ><%= post.category %></a
+              ></span
+            >
+            <span class="author">by <%= post.author %></span>
+            <span class="date"
+              ><%= new Date(post.updateedAt || post.createdAt).toLocaleString()
+              %></span
+            >
+          </div>
+          <p class="excerpt">
+            <%= post.body.length > 200 ? post.body.slice(0,200) + "..." :
+            post.body %>
+          </p>
+          <a class="readmore" href="/posts/<%= post.id %>">Read</a>
+        </article>
+        <% }) %>
+      </div>
+    </main>
+    <%- include("partials/footer") %>
+  </body>
+</html>

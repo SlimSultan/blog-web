@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Post - My Blog</title>
+  </head>
+  <body>
+    <%- include("partials/header") %>
+
+    <main class="container">
+      <h2>Create new post</h2>
+      <form action="/posts" method="post" class="form">
+        <label
+          >Title
+          <input name="title" required />
+        </label>
+        <label
+          >Author
+          <input name="author" required />
+        </label>
+        <label
+          >Category
+          <select name="category">
+            <% categories.forEach(function(cat){ %>
+            <option value="<%= cat %>"><%= cat %></option>
+            <% }) %>
+          </select>
+        </label>
+        <label
+          >Body
+          <textarea name="body" rows="10" required></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="btn" type="submit">Create</button>
+          <a class="btn ghost" href="/">Cancel</a>
+        </div>
+      </form>
+    </main>
+    <%- include("partials/footer") %>
+  </body>
+</html>

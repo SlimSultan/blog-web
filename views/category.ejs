@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= category %> - My Blog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <%- include("partials/header") %>
+    <main class="container">
+      <h2>Category: <%= category %></h2>
+      <div class="posts">
+        <% if (posts.length === 0) { %>
+        <p>No posts in this category yet.</p>
+        <% } else { %> <% posts.forEach(function(post) { %>
+        <article class="post-card">
+          <h3>
+            <a href="/posts/<%= post.id %>"><%= post.title %></a>
+          </h3>
+          <div class="meta">
+            <span class="author">by <%= post.author %></span>
+            <span class="date"
+              ><%= new Date(post.updatedAt || post.createdAt).toLocaleString()
+              %></span
+            >
+          </div>
+          <p class="excerpt">
+            <%= post.body.length > 200 ? post.body.slice(0,200) + "..." :
+            post.body %>
+          </p>
+          <a class="readmore" href="/posts/<%= post.id %>">Read</a>
+        </article>
+        <% }) %> <% } %>
+      </div>
+    </main>
+    <%- include("partials/footer") %>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="container">
+    <h1 class="brand"><a href="index.html">My Blog</a></h1>
+    <nav>
+      <ul class="nav">
+        <% categories.forEach(function (cat) { %>
+        <li><a href="/category/<%= cat %>"><%= cat %></a></li>
+        <% }) %>
+      </ul>
+    </nav>
+    <div class="actions">
+      <a class="btn" href="/posts/new">New Post</a>
+      <form class="search" action="/search" method="get">
+        <input name="q" placeholder="Search..." />
+      </form>
+    </div>
+  </div>
+</header>

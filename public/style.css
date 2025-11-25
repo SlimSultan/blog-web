@@ -1,0 +1,56 @@
+:root{
+  --max-width: 1000px;
+  --accent: #2b6cb0;
+  --muted: #666;
+  --bg: #f7f8fb;
+  --card: #ffffff;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: #222;
+  margin:0;
+  line-height:1.5;
+}
+
+.container{max-width:var(--max-width); margin:1.5rem auto; padding:0 1rem;}
+
+.site-header{
+  background: white;
+  border-bottom: 1px solid #e6e9ef;
+  padding:0.6rem 0;
+}
+.site-header .container{display:flex; align-items:center; gap:1rem;}
+.brand a{font-weight:700; color:var(--accent); text-decoration:none; font-size:1.3rem;}
+.nav{list-style:none; margin:0; padding:0; display:flex; gap:0.5rem; overflow:auto;}
+.nav li a{color:#333; text-decoration:none; padding:0.35rem 0.6rem; border-radius:6px; font-size:0.95rem;}
+.nav li a:hover{background:#f0f6ff;}
+
+.actions{margin-left:auto; display:flex; align-items:center; gap:0.5rem;}
+.btn{background:var(--accent); color:white; padding:0.45rem 0.7rem; text-decoration:none; border-radius:6px; border:0; cursor:pointer;}
+.btn.ghost{background:transparent; color:var(--accent); border:1px solid #e1e8f2;}
+.btn.danger{background:#d9534f;}
+.search input{padding:0.4rem; border-radius:6px; border:1px solid #ddd;}
+
+.posts{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; margin-top:1rem;}
+.post-card{background:var(--card); padding:1rem; border-radius:10px; box-shadow:0 1px 4px rgba(20,30,50,0.04);}
+.post-card h3{margin:0 0 0.4rem 0;}
+.post-card .meta{font-size:0.85rem; color:var(--muted); display:flex; gap:0.6rem; flex-wrap:wrap; margin-bottom:0.6rem;}
+.post-card .excerpt{color:#333; margin-bottom:0.6rem;}
+.readmore{font-size:0.9rem; color:var(--accent); text-decoration:none;}
+
+.post-full{background:var(--card); padding:1.5rem; border-radius:10px; box-shadow:0 1px 6px rgba(20,30,50,0.04);}
+.post-full .meta{color:var(--muted); font-size:0.95rem; margin-bottom:1rem;}
+
+.form{display:grid; gap:0.6rem; background:var(--card); padding:1rem; border-radius:8px;}
+.form label{display:block; font-weight:600; font-size:0.95rem;}
+.form input[type="text"], .form input, .form textarea, .form select {width:100%; padding:0.6rem; border-radius:6px; border:1px solid #e3e7ef; font-size:1rem;}
+.form-actions{display:flex; gap:0.6rem; margin-top:0.5rem;}
+
+.site-footer{padding:1rem 0; margin-top:2rem; color:var(--muted); text-align:center;}
+@media (max-width:720px){
+  .site-header .container{flex-direction:column; align-items:flex-start; gap:0.6rem;}
+  .actions{width:100%; justify-content:space-between;}
+}

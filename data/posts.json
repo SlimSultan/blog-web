@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "title": "Welcome to the Blog",
+    "body": "This is a sample welcome post. Use the create button to add your first post.",
+    "category": "Essays",
+    "author": "Admin",
+    "createdAt": "2025-01-01T10:00:00.000Z",
+    "updatedAt": "2025-11-06T10:55:11.031Z"
+  },
+  {
+    "id": "2",
+    "title": "Short Essay on Productivity",
+    "body": "Small essays can be written under the Essays category. This is an example.",
+    "category": "Essays",
+    "author": "Mustapha",
+    "createdAt": "2025-02-02T12:00:00.000Z",
+    "updatedAt": "2025-02-02T12:00:00.000Z"
+  },
+  {
+    "id": "17ede13a-d349-45c9-b3cb-1109d7f06a85",
+    "title": "Ma folo",
+    "body": "the next inline to fill the bulk address to the boss is the last or list employee that will be employed soon directed as the opportunity the CEO and the COO gives as we stands by the time and the date which the company moving to the constructed building under the company name after the COO mother by the power of the CEO.",
+    "category": "twitter",
+    "author": "Samad olorin",
+    "createdAt": "2025-11-06T11:08:12.393Z",
+    "updatedAt": "2025-11-06T11:08:12.394Z"
+  },
+  {
+    "id": "f12cec-14ca-4cde-bfc0-7e4c22595621",
+    "title": "wyufiljfkd",
+    "body": "vsdyiujnklfdm     olcferjk mekelkmwlq; jn ",
+    "category": "Books",
+    "author": "j;oefklfd",
+    "createdAt": "2025-11-06T11:09:04.603Z",
+    "updatedAt": "2025-11-06T11:09:04.603Z"
+  }
+]

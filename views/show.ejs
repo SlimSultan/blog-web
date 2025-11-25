@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= post.title %> - My Blog</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <%- include("partials/header") %>
+    <main class="container">
+      <article class="post-full">
+        <h2><%= post.title %></h2>
+        <div class="meta">
+          <span class="cat"
+            ><a href="/category/<%= post.category %>"
+              ><%= post.category %></a
+            ></span
+          >
+          <span class="author">by <%= post.author %></span>
+          <span class="date"
+            ><%= new Date(post.updatedAt || post.createdAt).toLocaleString()
+            %></span
+          >
+        </div>
+        <div class="body">
+          <pre style="white-space: pre-wrap"><%= post.body %></pre>
+        </div>
+
+        <div class="post-actions">
+          <a class="btn" href="/posts/<%= post.id %>/edit">Edit</a>
+          <a class="btn ghost" href="/">Back</a>
+        </div>
+      </article>
+    </main>
+    <%- include("partials/footer") %>
+  </body>
+</html>
